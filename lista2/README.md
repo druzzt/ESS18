@@ -16,7 +16,7 @@
 ### Quick run
 
 ```sh
-$ cd lista2
+$ cd assignment-3-5
 $ ./startTests.sh
 > enjoy
 ```
