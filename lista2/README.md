@@ -8,7 +8,7 @@
 ### Intro
  The list is about using programs written in VHDL 
  
-### Sketch
+### [Sketch](assignment-1-2/LFSRs.pdf)
 <object data="assignment-1-2/LFSRs.pdf" type="application/pdf" width="700px" height="700px">
     <embed src="assignment-1-2/LFSRs.pdf"/>
 </object>
