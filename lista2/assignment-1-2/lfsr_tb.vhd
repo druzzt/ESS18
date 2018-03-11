@@ -1,6 +1,8 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
+use std.textio.all;
+use IEEE.std_logic_textio.all;
 
 -- this is a testbench, but can be any other entity
 entity lfsr_tb is
@@ -21,6 +23,7 @@ architecture complex of lfsr_tb is
 
   -- outputs from LFSRs
   signal LFSR1,LFSR2 : std_logic;
+  signal result : std_logic := '0';
 
   -- just a reminder what will be tested
   component lfsr 
@@ -53,7 +56,8 @@ begin
     -- time to tell LFSRs to load up some data
     load <= '1';
     -- and give it to them (to one of them, at least)
-    q2 <= X"FAFA";
+    --q2 <= X"001F";
+    q2 <= "1000000000000000";
     -- even though LFSRs are async, let's wait for a bit...
     wait until clock'event and clock = '0';
     -- ... and let them run freely
@@ -61,6 +65,16 @@ begin
     -- this process is finished, make it wait ad infinitum
     wait;
   end process;
+
+writeOut : process
+    variable l : line;
+begin
+    wait until clock'event and clock = '0';
+    result <= LFSR2;
+    write(l, result);
+    writeline(output, l);
+    wait until clock'event and clock = '1';
+end process;
 
   -- okay, what's going on here? well, the 'clocker' process 
   -- keeps running, changing clk -> NOT clk -> clk -> NOT clk ...

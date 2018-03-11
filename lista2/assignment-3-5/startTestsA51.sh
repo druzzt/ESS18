@@ -18,10 +18,10 @@ ghdl -r --ieee=synopsys a51_tb --stop-time=10000ns > output.txt
 #clear
 echo "Compiled."
 
-cd statistical_tests
+cd ../statistical_tests
 echo "----Frequency Monobit Test----"
-python frequencyMonobitTest.py ../output.txt
+python frequencyMonobitTest.py ../assignment-3-5/output.txt
 echo "----Frequency Test Within a Block----"
-python frequencyTestWithinABlock.py ../output.txt $1
+python frequencyTestWithinABlock.py ../assignment-3-5/output.txt $1
 echo "----Excursion Test----"
-python excursionTest.py ../output.txt
+python excursionTest.py ../assignment-3-5/output.txt
