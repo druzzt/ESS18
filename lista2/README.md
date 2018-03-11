@@ -9,10 +9,12 @@
  The list is about using programs written in VHDL 
  
 ### Sketch
-<object data="http://yoursite.com/the.pdf" type="application/pdf" width="700px" height="700px">
-    <embed src="http://yoursite.com/the.pdf"/>
+<object data="assignment-1-2/LFSRs.pdf" type="application/pdf" width="700px" height="700px">
+    <embed src="assignment-1-2/LFSRs.pdf"/>
 </object>
+
 ### Quick run
+
 ```sh
 $ cd lista2
 $ ./startTests.sh
